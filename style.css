@@ -1,0 +1,110 @@
+body{
+    background-color:black;
+    color: red;
+    width: 100%;
+}
+
+h1 h2{
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.header{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.letterBoxes{
+    width: 20px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 40px;
+    vertical-align: middle;
+    /* border: yellow 1px dotted; */
+}
+
+.clearfix{
+    content:"";
+    clear:both;
+    float:left;
+    /* display:table; */
+}
+
+.RLetterBoxes{
+    display: inline-block;
+}
+
+#contentBody{
+    position: fixed;
+    top: 30%;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    width:80%;
+    height: 50%;
+    /* border:hotpink 1px dotted; */
+}
+
+#gameDiv{
+    /* border: 1px white solid; */
+    color: white;
+    font-size: 20px;
+    width:70%;
+    height: 150px;
+    display: flex;
+    top: 150px;
+    float:left;
+}
+
+#display{
+    display: block;
+    width: 70%;
+    height: auto;
+    /* border: red 1px solid; */
+    float: left;
+}
+
+#aside{
+    width: 20%;
+    height: 30%;
+    display: table;
+}
+
+#scoreDiv{
+    width: 100%;
+    height: 50%;
+    display: block;
+    top: 150px;
+    /* margin-left: 20px; */
+    margin-bottom: 50px
+}
+
+/* /* #instructionDiv */
+#footer{
+    width: 100%;
+    font-size: 150%;
+    height:auto;
+    /* margin: bottom left; */
+}
+
+#winImg{
+    width: 100%;
+    height: auto;
+}
+
+#ResultText{
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#tries,#rejects{
+    font-size: 30px;
+    color:blue;
+    /* font-style: bold; */
+    /* background-color:white; */
+    
+}

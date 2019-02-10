@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Word Guess Game</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/javascript" href="game.js">
+        
+    </head>
+    <body>
+
+        <div class="header">
+            <h1>Hangman Word Guess Game</h1>
+            <h2>Mystical Creatures Themed</h2>
+        </div>
+        
+        <div id="contentBody">
+            <div id = "gameDiv" class = "clearfix"></div>
+            <div id = "display" class = "clearfix"></div>
+            <!-- <div id = "aside"> -->
+                <!-- <div id = "instructionDiv"> -->
+                   
+                <!-- </div> -->
+                <div id = "scoreDiv">
+                    <p id = "tries"><strong>Tries left: 5</strong></p><br><br>
+                    <p id = "rejects"><strong>Rejected Letters:</strong></p>
+                </div>
+                <br>
+                <br>
+                <div id="footer">
+                     <p>Hello! Welcome to the game of word guessing</p>
+                    <p>Press keys correspoding to your letter guesses!</p>
+                    <p>Take care not to run out of lives!</p>
+                </div>
+            </div>
+            <br>
+            
+        </div>
+       
+        <script src="game.js"></script>
+        <script>
+            resetGame();
+            updateDisplay();
+        </script>
+    </body>
+</html>
