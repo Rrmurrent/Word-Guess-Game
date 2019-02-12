@@ -4,14 +4,18 @@ var imgLink = ["Dragon.jpg","unicorn.jpg","mermaid.jpg","centaur.jpg","troll.jpg
 //Randomized Selection
 var selector = Math.floor((Math.random() * wordPool.length));
 var word = wordPool[selector];
-var linkImg = "/jpg" + imgLink[selector];
+var linkImg = imgLink[selector];
 var wordLength = word.length;
 var lives = 5;
 var tally = 0;
 var rejectedLetters = [];
+// var resetgame = 
+// var closing= 
+
 console.log(word);
 console.log(wordLength);
 console.log(linkImg);
+console.log(linkImg[selector]);
 
 var fxn = function (tally, lives){    
     while ( tally === wordLength){
@@ -24,32 +28,48 @@ var fxn = function (tally, lives){
         var win = document.createTextNode( "You Win!" );
         result.appendChild(win)
         result.id = "ResultText";
-        pic.id = "winImg";
+        // pic.id = "winImg";
         pic.setAttribute("src", imgLink);
-        pic.setAttribute("src", "fairy.jpg");
-        display.appendChild(result);
+        // pic.setAttribute("width","50%");
+        pic.setAttribute("src", linkImg);
+        // display.appendChild(result);
         display.appendChild(pic);
         return tally;
     }
     
-    while ( lives < 1 ){
+    // while
+     if ( lives < 1 ){
+        // var endNote = Boolean:"Would you like to play again?"];
+            // if boolean === True{}
         lives = 5;
         tally = 0;
-        var result = document.createElement("P");
-        var lose = document.createTextNode("Sorry, You Lose. Better Luck Next Time!");
+        // var result = document.createElement("P");
+        // var closing = document.createTextNode("Would you like to play again?");
+        // var lose = document.createTextNode("Sorry, You Lose. Better Luck Next Time!");
         result.appendChild(lose);
         result.id = "ResultText"
+        // getElementById = "ResultText"
+        document.write
+        greeting ="Sorry, You Lose. Better Luck Next Time!"
         return lives;
+        
+        }
+
+        
     };
-};
+
+// };
 
 //for loop -- creating letterBox
 for( i = 0 ; i < wordLength; i++){
     var gDiv = document.getElementById("gameDiv");
     var letterBox = document.createElement("div");
     var placeHolder = document.createTextNode("_");
+    // shows the letters as they are guessed
     letterBox.id = "LB" + [i];
+    // separate letter boxes created
     letterBox.classList.add("letterBoxes");
+    // makes letter boxes visible with underscore placeholders utilized from var stated above
     letterBox.appendChild(placeHolder);
     gDiv.appendChild(letterBox);
 };
@@ -105,7 +125,7 @@ document.addEventListener("keydown", function(e){
                 fxn(tally, lives);
                 break;
             }
-
+            
            //inside forloop 
         }
         //outside forloop
@@ -113,6 +133,8 @@ document.addEventListener("keydown", function(e){
 });
 
 console.log("tally = " + tally);
+// function.resetgame{}
+
 
 /*  1)losing conditions not triggering
     2)no duplicates in reject letter array

@@ -5,42 +5,56 @@
         <title>Word Guess Game</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/javascript" href="game.js">
-        
     </head>
     <body>
+        <script>
+            document.body.style.backgroundImage = "url('img_tree.png')";
+            </script>
 
         <div class="header">
-            <h1>Hangman Word Guess Game</h1>
-            <h2>Mystical Creatures Themed</h2>
+            <h1><strong>Hangman Word Guess Game</strong></h1>
+            <h2><stong>~~~Mystical Creatures Themed~~~</strong></h2>
         </div>
-        
+    <!-- container entire game play is in -->
         <div id="contentBody">
             <div id = "gameDiv" class = "clearfix"></div>
             <div id = "display" class = "clearfix"></div>
-            <!-- <div id = "aside"> -->
-                <!-- <div id = "instructionDiv"> -->
-                   
-                <!-- </div> -->
+            
+
+            <!-- Displays score, tries left, rejects -->
                 <div id = "scoreDiv">
                     <p id = "tries"><strong>Tries left: 5</strong></p><br><br>
                     <p id = "rejects"><strong>Rejected Letters:</strong></p>
                 </div>
                 <br>
                 <br>
-                <div id="footer">
+
+
+            <!-- Generates greeting for player -->
+                <div id = "greeting">
                      <p>Hello! Welcome to the game of word guessing</p>
                     <p>Press keys correspoding to your letter guesses!</p>
                     <p>Take care not to run out of lives!</p>
                 </div>
+            <!--End of greeting div-->
+            </div>
+            <!-- <div id = "footer"> -->
+                
+
             </div>
             <br>
-            
         </div>
-       
+
+
+       <!-- JS script -->
         <script src="game.js"></script>
+
+
+        <!-- JS script to reset game and update display -->
         <script>
             resetGame();
             updateDisplay();
         </script>
+
     </body>
 </html>

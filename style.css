@@ -2,18 +2,21 @@ body{
     background-color:black;
     color: red;
     width: 100%;
+    
 }
 
 h1 h2{
-    font-weight: bold;
-    font-size: 50px;
+    font-weight: bolder;
+    /* color:red; */
+    /* font: size 50%; */
 }
 
 .header{
     position: fixed;
     top: 0px;
-    width: 100%;
+    width: 50%;
     text-align: center;
+    font-size: 30px;
 }
 
 .letterBoxes{
@@ -50,8 +53,8 @@ h1 h2{
 #gameDiv{
     /* border: 1px white solid; */
     color: white;
-    font-size: 20px;
-    width:70%;
+    font-size: 10px;
+    width:60%;
     height: 150px;
     display: flex;
     top: 150px;
@@ -90,8 +93,8 @@ h1 h2{
 }
 
 #winImg{
-    width: 100%;
-    height: auto;
+    width: 10%;
+    height: 10%;
 }
 
 #ResultText{
@@ -102,9 +105,14 @@ h1 h2{
     margin-bottom: 0px;
 }
 #tries,#rejects{
-    font-size: 30px;
+    font-size: 40px;
     color:blue;
-    /* font-style: bold; */
-    /* background-color:white; */
-    
+    font-weight: bolder;
+    /* background-color:white; */   
+}
+#greeting{
+    font-size:30px;
+    color: white;
+    font-weight:bolder;
+
 }
