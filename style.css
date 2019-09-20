@@ -1,5 +1,5 @@
 body{
-    background-color:black;
+    background-color:blue;
     color: red;
     width: 100%;
     
@@ -14,18 +14,27 @@ h1 h2{
 .header{
     position: fixed;
     top: 0px;
-    width: 50%;
+    width: 90%;
     text-align: center;
     font-size: 30px;
+    background-color: yellow;
+    margin-left: 5%;
 }
+/* .jumbotron{
+    background-color: blue;
+} */
 
+#homeDiv{
+    background-color: blue;
+}
 .letterBoxes{
-    width: 20px;
-    padding: 10px;
-    margin: 10px;
-    font-size: 40px;
+    width: 50%;
+    padding: 20px;
+    /* margin: 10px; */
+    font-size: 30px;
     vertical-align: middle;
     /* border: yellow 1px dotted; */
+    background-color: black;
 }
 
 .clearfix{
@@ -39,15 +48,19 @@ h1 h2{
     display: inline-block;
 }
 
-#contentBody{
+/* .homeDiv{
+    background-color: aqua;
+} */
+
+#mainDiv{
     position: fixed;
     top: 30%;
     left: 10%;
     right: 10%;
     display: flex;
     width:80%;
-    height: 50%;
-    /* border:hotpink 1px dotted; */
+    height: 60%;
+    background-color:red;
 }
 
 #gameDiv{
@@ -59,6 +72,7 @@ h1 h2{
     display: flex;
     top: 150px;
     float:left;
+    background-color: blue;
 }
 
 #display{

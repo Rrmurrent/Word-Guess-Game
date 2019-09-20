@@ -5,18 +5,21 @@
         <title>Word Guess Game</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/javascript" href="game.js">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
     </head>
-    <body>
-        <script>
+    <body class="container-fluid homeDiv jumbotron" id=homeDiv>
+        <!-- <script>
             document.body.style.backgroundImage = "url('img_tree.png')";
-            </script>
-
+            </script> -->
+    <!-- <div>  -->
         <div class="header">
             <h1><strong>Hangman Word Guess Game</strong></h1>
             <h2><stong>~~~Mystical Creatures Themed~~~</strong></h2>
         </div>
     <!-- container entire game play is in -->
-        <div id="contentBody">
+    <!-- <div class="jumbotron"> -->
+        <div id="mainDiv">
             <div id = "gameDiv" class = "clearfix"></div>
             <div id = "display" class = "clearfix"></div>
             
@@ -28,8 +31,6 @@
                 </div>
                 <br>
                 <br>
-
-
             <!-- Generates greeting for player -->
                 <div id = "greeting">
                      <p>Hello! Welcome to the game of word guessing</p>
@@ -38,17 +39,12 @@
                 </div>
             <!--End of greeting div-->
             </div>
+        <!-- </div> -->
             <!-- <div id = "footer"> -->
-                
-
-            </div>
-            <br>
-        </div>
-
-
+    <!-- </div> -->
        <!-- JS script -->
         <script src="game.js"></script>
-
+        <script src = "https://code.jquery.com/jquery-3.3.1.js" integrity = "sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin = "anonymous"></script>
 
         <!-- JS script to reset game and update display -->
         <script>

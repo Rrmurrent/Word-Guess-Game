@@ -63,6 +63,8 @@ var fxn = function (tally, lives){
 //for loop -- creating letterBox
 for( i = 0 ; i < wordLength; i++){
     var gDiv = document.getElementById("gameDiv");
+    // var gDiv = document.getElementById("mainDiv");
+
     var letterBox = document.createElement("div");
     var placeHolder = document.createTextNode("_");
     // shows the letters as they are guessed
@@ -125,7 +127,9 @@ document.addEventListener("keydown", function(e){
                 fxn(tally, lives);
                 break;
             }
-            
+            // var lose = function(){
+                // alert("You Lose");
+                // document.location.reload()
            //inside forloop 
         }
         //outside forloop
