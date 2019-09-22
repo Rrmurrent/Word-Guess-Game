@@ -1,10 +1,8 @@
 //List of Possible Answers
 var wordPool = ["dragon","unicorn", "mermaid","centaur","troll","fairy"];
-var imgLink = ["Dragon.jpg","unicorn.jpg","mermaid.jpg","centaur.jpg","troll.jpg","fairy.jpg"]
 //Randomized Selection
 var selector = Math.floor((Math.random() * wordPool.length));
 var word = wordPool[selector];
-var linkImg = imgLink[selector];
 var wordLength = word.length;
 var lives = 5;
 var tally = 0;
@@ -14,8 +12,8 @@ var rejectedLetters = [];
 
 console.log(word);
 console.log(wordLength);
-console.log(linkImg);
-console.log(linkImg[selector]);
+// console.log(linkImg);
+// console.log(linkImg[selector]);
 
 var fxn = function (tally, lives){    
     while ( tally === wordLength){
@@ -23,17 +21,11 @@ var fxn = function (tally, lives){
         tally = 0;
         lives = 5;
         var display = document.getElementById("display");
-        var pic = document.createElement("IMG");
         var result = document.createElement("P")
         var win = document.createTextNode( "You Win!" );
         result.appendChild(win)
         result.id = "ResultText";
-        // pic.id = "winImg";
-        pic.setAttribute("src", imgLink);
-        // pic.setAttribute("width","50%");
-        pic.setAttribute("src", linkImg);
-        // display.appendChild(result);
-        display.appendChild(pic);
+        display.appendChild(result);
         return tally;
     }
     
@@ -43,14 +35,17 @@ var fxn = function (tally, lives){
             // if boolean === True{}
         lives = 5;
         tally = 0;
-        // var result = document.createElement("P");
+        var result = document.createElement("P");
         // var closing = document.createTextNode("Would you like to play again?");
         // var lose = document.createTextNode("Sorry, You Lose. Better Luck Next Time!");
+        var result = document.createElement("P")
+        var lose = document.createTextNode("Sorry, You Lose. Better Luck Next Time")
         result.appendChild(lose);
         result.id = "ResultText"
+        display.appendChild(lives);
         // getElementById = "ResultText"
-        document.write
-        greeting ="Sorry, You Lose. Better Luck Next Time!"
+        // document.write
+        // greeting ="Sorry, You Lose. Better Luck Next Time!"
         return lives;
         
         }
@@ -62,8 +57,8 @@ var fxn = function (tally, lives){
 
 //for loop -- creating letterBox
 for( i = 0 ; i < wordLength; i++){
-    var gDiv = document.getElementById("gameDiv");
-    // var gDiv = document.getElementById("mainDiv");
+    // var gDiv = document.getElementById("gameDiv");
+    var gDiv = document.getElementById("mainDiv");
 
     var letterBox = document.createElement("div");
     var placeHolder = document.createTextNode("_");

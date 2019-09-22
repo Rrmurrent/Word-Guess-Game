@@ -13,24 +13,30 @@
             document.body.style.backgroundImage = "url('img_tree.png')";
             </script> -->
     <!-- <div>  -->
-        <div class="header">
-            <h1><strong>Hangman Word Guess Game</strong></h1>
-            <h2><stong>~~~Mystical Creatures Themed~~~</strong></h2>
+        <div class= "header">
+            <h1><strong>Word Guess Game</strong></h1>
+            <!-- <h2><stong>-Mystical Creatures Themed-</strong></h2> -->
         </div>
+
+        <div id = "display" class = "clearfix"></div>
+
+
     <!-- container entire game play is in -->
     <!-- <div class="jumbotron"> -->
-        <div id="mainDiv">
+        <div class  = "col-sm wrapper" id="mainDiv">
             <div id = "gameDiv" class = "clearfix"></div>
-            <div id = "display" class = "clearfix"></div>
+            <!-- <div id = "display" class = "clearfix"></div> -->
             
 
             <!-- Displays score, tries left, rejects -->
-                <div id = "scoreDiv">
+                <div class="col-sm" id = "scoreDiv">
                     <p id = "tries"><strong>Tries left: 5</strong></p><br><br>
                     <p id = "rejects"><strong>Rejected Letters:</strong></p>
                 </div>
                 <br>
                 <br>
+
+                
             <!-- Generates greeting for player -->
                 <div id = "greeting">
                      <p>Hello! Welcome to the game of word guessing</p>
