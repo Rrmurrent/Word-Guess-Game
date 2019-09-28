@@ -1,62 +1,65 @@
 <!DOCTYPE html>
-<html lang="en-us">
-    <head>
-        <meta charset="UTF-8">
-        <title>Word Guess Game</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/javascript" href="game.js">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        
-    </head>
-    <body class="container-fluid homeDiv jumbotron" id=homeDiv>
-        <!-- <script>
-            document.body.style.backgroundImage = "url('img_tree.png')";
-            </script> -->
-    <!-- <div>  -->
-        <div class= "header">
-            <h1><strong>Word Guess Game</strong></h1>
-            <!-- <h2><stong>-Mystical Creatures Themed-</strong></h2> -->
-        </div>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hangman</title>
+    <meta name = "viewport" content= "width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes"/>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="icon" href="img/noose.png"> -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
 
-        <div id = "display" class = "clearfix"></div>
+	
+	<h1>Hangman</h1>
+	<div class="instructions:"></div>
+	<div>
+	<img class="icon" src="img/noose02.png">	
+		<p style="font-weight: bolder">Welcome to HangMan! You have seven chances to guess the correct word.</p>
+		<p style="font-weight: bolder">Click on a letter to guess and begin the game. </p>
+			<button>A</button>
+			<button>B</button>
+			<button>C</button>
+			<button>D</button>
+			<button>E</button>
+			<button>F</button>
+			<button>G</button>
+			<button>H</button>
+			<button>I</button>
+	</div>
+
+	<div>
+			<button>J</button>
+			<button>K</button>
+			<button>L</button>
+			<button>M</button>
+			<button>N</button>
+			<button>O</button>
+			<button>P</button>
+			<button>Q</button>
+	</div>
+
+	<div>
+			<button>R</button>
+			<button>S</button>
+			<button>T</button>
+			<button>U</button>
+			<button>V</button>
+			<button>W</button>
+			<button>X</button>
+			<button>Y</button>
+			<button>Z</button>
+	</div>
+
+	<h3 class="category">Category: Animals</h3>
+	<div id="container">
+        <!-- Random word Divs appended here -->
+    </div>
+	<!-- <img id="hangman" src="img/013.png"> -->
+
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="game.js"></script>
+</body>
 
 
-    <!-- container entire game play is in -->
-    <!-- <div class="jumbotron"> -->
-        <div class  = "col-sm wrapper" id="mainDiv">
-            <div id = "gameDiv" class = "clearfix"></div>
-            <!-- <div id = "display" class = "clearfix"></div> -->
-            
-
-            <!-- Displays score, tries left, rejects -->
-                <div class="col-sm" id = "scoreDiv">
-                    <p id = "tries"><strong>Tries left: 5</strong></p><br><br>
-                    <p id = "rejects"><strong>Rejected Letters:</strong></p>
-                </div>
-                <br>
-                <br>
-
-                
-            <!-- Generates greeting for player -->
-                <div id = "greeting">
-                     <p>Hello! Welcome to the game of word guessing</p>
-                    <p>Press keys correspoding to your letter guesses!</p>
-                    <p>Take care not to run out of lives!</p>
-                </div>
-            <!--End of greeting div-->
-            </div>
-        <!-- </div> -->
-            <!-- <div id = "footer"> -->
-    <!-- </div> -->
-       <!-- JS script -->
-        <script src="game.js"></script>
-        <script src = "https://code.jquery.com/jquery-3.3.1.js" integrity = "sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin = "anonymous"></script>
-
-        <!-- JS script to reset game and update display -->
-        <script>
-            resetGame();
-            updateDisplay();
-        </script>
-
-    </body>
 </html>

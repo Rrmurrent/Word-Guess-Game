@@ -1,140 +1,87 @@
-//List of Possible Answers
-var wordPool = ["dragon","unicorn", "mermaid","centaur","troll","fairy"];
-//Randomized Selection
-var selector = Math.floor((Math.random() * wordPool.length));
-var word = wordPool[selector];
-var wordLength = word.length;
-var lives = 5;
-var tally = 0;
-var rejectedLetters = [];
-// var resetgame = 
-// var closing= 
+$(document).ready(function() {
 
-console.log(word);
-console.log(wordLength);
-// console.log(linkImg);
-// console.log(linkImg[selector]);
+	// Pick a category and secret word
+    var categories = [
+        ["cat", "dog", "caterpillar", "deer", "butterfly", "cricket", "eagle", "zebra", "monkey", "horse"],
+        ["pikachu", "snorlax", "mewtwo", "eevee", "celebi", "ditto", "charizard", "mew", "bulbasaur"],
+        ["france", "mexico", "brazil", "italy", "canada", "kazakhstan", "china", "hungary", "iraq"]
+    ];
+    var randomCategoryArray = categories[Math.floor((Math.random() * categories.length))];
+    var randomWord = (randomCategoryArray[Math.floor((Math.random() * randomCategoryArray.length))]).toUpperCase();
+    console.log(randomWord);
+    var randomWordArray = randomWord.split("");
 
-var fxn = function (tally, lives){    
-    while ( tally === wordLength){
-        console.log("tally = " + tally + "!")
-        tally = 0;
-        lives = 5;
-        var display = document.getElementById("display");
-        var result = document.createElement("P")
-        var win = document.createTextNode( "You Win!" );
-        result.appendChild(win)
-        result.id = "ResultText";
-        display.appendChild(result);
-        return tally;
+
+    // Instructions
+    // $('.instructions').text("Welcome to the game of Hangman! Guess the correct word in 7 guesses or less to win!");
+
+    // Print category name
+    if ($.inArray("cat", randomCategoryArray) > -1) {
+        $(".category").text("Category is animals");
+    } else if ($.inArray("pikachu", randomCategoryArray) > -1) {
+        $(".category").text("Category is Pokemon");
+    } else {
+        $(".category").text("Category is countries");
     }
-    
-    // while
-     if ( lives < 1 ){
-        // var endNote = Boolean:"Would you like to play again?"];
-            // if boolean === True{}
-        lives = 5;
-        tally = 0;
-        var result = document.createElement("P");
-        // var closing = document.createTextNode("Would you like to play again?");
-        // var lose = document.createTextNode("Sorry, You Lose. Better Luck Next Time!");
-        var result = document.createElement("P")
-        var lose = document.createTextNode("Sorry, You Lose. Better Luck Next Time")
-        result.appendChild(lose);
-        result.id = "ResultText"
-        display.appendChild(lives);
-        // getElementById = "ResultText"
-        // document.write
-        // greeting ="Sorry, You Lose. Better Luck Next Time!"
-        return lives;
-        
+
+
+	// Draw squares for secret word & hide letters
+	for(var i = 0; i < randomWord.length; i++) {
+        $('#container').append('<div class="letter ' + i + '"></div>');
+        $('#container').find(":nth-child(" + (i + 1) + ")").text(randomWordArray[i]);
+        $(".letter").css("color", "black");
+    }
+
+	// Button click function
+    var wrongGuesses = 0;
+    $("button").on("click", function(){
+        $(this).addClass("used");
+        $(this).prop("disabled", "true");
+        var matchFound = false;
+
+        // Check if clicked letter is in secret word
+        var userGuess = $(this).text();
+        for (var i = 0; i < randomWord.length; i++) {
+            if (userGuess === randomWord.charAt(i)) {
+                $('#container').find(":nth-child(" + (i + 1) + ")").css("color", "#EFEFEF").addClass("winner");
+                matchFound = true;
+            }
         }
 
-        
-    };
-
-// };
-
-//for loop -- creating letterBox
-for( i = 0 ; i < wordLength; i++){
-    // var gDiv = document.getElementById("gameDiv");
-    var gDiv = document.getElementById("mainDiv");
-
-    var letterBox = document.createElement("div");
-    var placeHolder = document.createTextNode("_");
-    // shows the letters as they are guessed
-    letterBox.id = "LB" + [i];
-    // separate letter boxes created
-    letterBox.classList.add("letterBoxes");
-    // makes letter boxes visible with underscore placeholders utilized from var stated above
-    letterBox.appendChild(placeHolder);
-    gDiv.appendChild(letterBox);
-};
-
-//Keypress Listener
-document.addEventListener("keydown", function(e){
-    console.log("you pressed: " + e.key);
-    var match = false;
-    //for loop
-    for( i = 0; i < wordLength; i++){
-        var mark = word.charAt([i]);
-        var shortWordLength = wordLength - 1;
-        var key = e.key;
-        console.log(mark);
-
-            if ( ([i] < shortWordLength) && (e.key === mark) ){
-                var transform = document.getElementById("LB" + [i]);
-                match = true;
-                tally++;
-                transform.innerHTML = mark;
-                console.log("looks great!");
-                fxn(tally, lives);
+        //Check for winner
+        var goodGuesses = [];
+        $(".letter").each(function( index ) {
+            if ( $(this).hasClass("winner") ) {
+                goodGuesses.push(index);
+                if (goodGuesses.length === randomWordArray.length) {
+                    $("#container").hide();
+                    $("button").prop("disabled", "true");
+                    $(".category").text("Great job you guessed the secret word!");
+                    $(".category").append("<br><button enabled class='play-again'>Play again?</button>");
+                }
             }
+        });
 
-            else if ( ( [i] < shortWordLength) && (e.key != mark || match == false) ){
-                console.log("Nope. Keep looking.");
-                fxn(tally, lives);
-            }
-
-            else if ( ( [i] == shortWordLength) && (e.key === mark) ){
-                var transform = document.getElementById("LB" + [i]);
-                match = true;
-                tally++;
-                transform.innerHTML = mark;
-                console.log("looks great(finally)!");
-                fxn(tally, lives);
-                return match;
-            }
-
-            else if( ([i] == shortWordLength) && (match === false) ) {
-                var sDiv = document.getElementById("tries");
-                lives--;
-                var triesMessage = "Tries left: " + lives;
-                var rejLetters= document.getElementById("rejects");
-                var RLBox = document.createElement("div");
-                sDiv.innerHTML = triesMessage;
-                rejectedLetters.push(key)
-                RLBox.innerHTML= e.key;
-                RLBox.classList.add("RLetterBoxes");
-                rejLetters.appendChild(RLBox);
-                console.log("no match found");
-                console.log(rejectedLetters)
-                fxn(tally, lives);
-                break;
-            }
-            // var lose = function(){
-                // alert("You Lose");
-                // document.location.reload()
-           //inside forloop 
+        // If no match, increase count and add appropriate image
+        if (matchFound === false) {
+            wrongGuesses += 1;
+            $("#hangman").attr("src", "img/" + wrongGuesses + ".png");
+            $(".category").text("Your total number of wrong guesses is  " + wrongGuesses);
         }
-        //outside forloop
-    
-});
 
-console.log("tally = " + tally);
-// function.resetgame{}
+        // If wrong guesses gets to 7 exit the game
+        if (wrongGuesses === 7) {
+            $("#container").hide();
+            $("button").prop("disabled", "true");
+            $(".category").text("Sorry you lost! The secret word was " + randomWord);
+            $(".category").append("<br><button enabled class='play-again'>Play again?</button>");
+        }
 
+        // Play again button
+        $(".play-again").on("click", function(){
+            location.reload();
+        });
 
-/*  1)losing conditions not triggering
-    2)no duplicates in reject letter array
-*/
+    }); // End button click
+
+}); // End document.ready
